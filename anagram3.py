@@ -22,10 +22,10 @@ print('\n--> ', anagrama_rng(palavra))
 while True:
     decisao = input("\nQueres outro com esta palavra? (sim/nao): ").casefold()
 
-    if decisao == "não" or decisao == "ñ" or decisao == "n":
+    if decisao == "não" or decisao == "nao" or decisao == "n":
         decisao = input("\nQueres um com outra palavra? (sim/nao): ").casefold()
 
-        if decisao == "não" or decisao == "ñ" or decisao == "n":
+        if decisao == "não" or decisao == "nao" or decisao == "n":
             print("\nAdeus")
             break
 
