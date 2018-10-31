@@ -23,8 +23,16 @@ while True:
     decisao = input("\nQueres outro com esta palavra? (sim/nao): ").casefold()
 
     if decisao == "não" or decisao == "ñ" or decisao == "n":
-        print("\nAdeus")
-        break
+        decisao = input("\nQueres um com outra palavra? (sim/nao): ").casefold()
+
+        if decisao == "não" or decisao == "ñ" or decisao == "n":
+            print("\nAdeus")
+            break
+
+        else:
+            palavra = palavra_input()
+            print('\n--> ', anagrama_rng(palavra))
+            continue
 
     else:
         print('\n--> ', anagrama_rng(palavra))
