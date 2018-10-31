@@ -5,38 +5,27 @@ print("Bem Vind(o/a)! Queres um anagrama? Então..")
 
 def palavra_input():
     palavra = input("Escreve uma palavra: ").lower()
-    palavra = [letra for letra in palavra]
     
     return palavra
     
-def anagrama_rng():
+def anagrama_rng(palavra):
+    palavra = [letra for letra in palavra]
     anagrama = ""
     for letra in range(len(palavra)):
         anagrama = anagrama + palavra.pop(random.randrange(len(palavra)))
 
-    print('\n--> ', anagrama)
     return anagrama
     
-def anagrama_regen(anagrama):
-    anagrama = [letra for letra in anagrama]
-    novo_anagrama = ""
-    for letra in range(len(anagrama)):
-        novo_anagrama = novo_anagrama + anagrama.pop(random.randrange(len(anagrama)))
-
-    print('\n--> ', novo_anagrama)
-    return novo_anagrama
-    
 palavra = palavra_input()
-anagrama = anagrama_rng()
+print('\n--> ', anagrama_rng(palavra))
 
-decisao = input("\nQueres outro com esta palavra? (sim/nao): ").casefold()
+while True:
+    decisao = input("\nQueres outro com esta palavra? (sim/nao): ").casefold()
 
-if decisao == "sim" or decisao == "s" or decisao == "y":
-    anagrama_regen(anagrama)
+    if decisao == "não" or decisao == "ñ" or decisao == "n":
+        print("\nAdeus")
+        break
 
-else:
-    print("\nAdeus")
-
-
-
-input('\nCarrega ENTER para fechar a janela.')
+    else:
+        print('\n--> ', anagrama_rng(palavra))
+        continue
